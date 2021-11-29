@@ -1,4 +1,4 @@
-import React, { useState, FC } from "react";
+import React from "react";
 import ParticleImage, {
   ParticleOptions,
   Vector,
@@ -47,28 +47,23 @@ const motionForce = (x: number, y: number): ParticleForce => {
 };
 
 export default function App() {
-  //const { innerWidth, innerHeight } = useWindowSize();
-  const [innerWidth, setInnerWidth] = useState(500);
-  const [innerHeight, setInnerHeight] = useState(500);
-
   return (
     <>
       <ParticleImage
         src={devs}
-        width={innerWidth}
-        height={innerHeight}
+        width={500}
+        height={500}
         scale={2}
         entropy={50}
         maxParticles={3000}
         particleOptions={particleOptions}
         mouseMoveForce={motionForce}
-        touchMoveForce={motionForce}
         backgroundColor="#191D1F"
       />
       <ParticleImage
         src={buildings}
         width={1000}
-        height={innerHeight}
+        height={500}
         scale={2}
         entropy={10}
         maxParticles={2000}
